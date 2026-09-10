@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="ie=edge" http-equiv="x-ua-compatible"/>
+<meta content="telephone=no,address=no,email=no,date=no,url=no" name="format-detection"/>
+<title>AI Industry Pulse</title>
+<!--[if mso]>
+  <xml>
+    <o:OfficeDocumentSettings>
+      <o:PixelsPerInch>96</o:PixelsPerInch>
+      <o:AllowPNG/>
+    </o:OfficeDocumentSettings>
+  </xml>
+  <![endif]-->
+<style>
+    html,body{margin:0!important;padding:0!important;width:100%!important;height:100%!important}
+    *{-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}
+    table,td{mso-table-lspace:0pt!important;mso-table-rspace:0pt!important}
+    table{border-spacing:0!important;border-collapse:collapse!important}
+    img{-ms-interpolation-mode:bicubic;border:0;outline:none;text-decoration:none;display:block}
+    a{text-decoration:none}
+    .email-container{width:100%;max-width:920px}
+    .industry-col{width:50%}
+    /* Equal-height industry cards. Outlook treats these as minimum heights,
+       keeping all four cards aligned while allowing unusually long copy to expand safely. */
+    .industry-card-table{height:auto}
+    .industry-title-row{height:auto}
+    .industry-body{height:190px}
+    .show-mobile{display:none;max-height:0;overflow:hidden;mso-hide:all}
+    .page-shell,.industry-card-table,.usecase-card-table,.company-logo-box,.small-icon-box{border-collapse:separate!important;border-spacing:0!important;}
+    .page-shell,.industry-card-table,.usecase-card-table,.company-logo-box,.small-icon-box{overflow:hidden!important;}
+
+    @media only screen and (min-width:721px) and (max-width:900px){
+      .outer-pad{padding-top:18px!important;padding-bottom:18px!important}
+      .hero-pad{padding-left:32px!important;padding-right:32px!important}
+      .hero-title{font-size:42px!important}
+      .hero-logo{width:108px!important}
+      .content-pad{padding-left:32px!important;padding-right:32px!important}
+      .industry-gap{width:14px!important}
+      .industry-title{font-size:18px!important}
+      .industry-card-table{height:auto!important}
+      .industry-title-row{height:auto!important}
+      .industry-body{height:190px!important}
+      .trend-title{font-size:15px!important}
+      .trend-copy{font-size:12px!important}
+      .usecase-left{width:180px!important}
+      .usecase-main{padding-left:20px!important;padding-right:20px!important}
+      .company-logo-box{width:56px!important;height:50px!important}
+    }
+
+    @media only screen and (max-width:720px){
+      .outer-pad{padding:0!important}
+      .email-container{width:100%!important;max-width:100%!important}
+      .page-shell{border-radius:0!important;box-shadow:none!important}
+      .hero-cell{height:118px!important}
+      .hero-pad{padding-left:20px!important;padding-right:20px!important}
+      .hero-title{font-size:32px!important;line-height:1.05!important;white-space:nowrap!important}
+      .hero-logo{width:86px!important}
+      .intro-top{height:40px!important}
+      .content-pad{padding-left:20px!important;padding-right:20px!important}
+      .intro-title{font-size:25px!important}
+      .section-title{font-size:26px!important}
+      .industry-row,.industry-col,.industry-gap{display:block!important;width:100%!important;max-width:100%!important}
+      .industry-gap{height:14px!important;font-size:0!important;line-height:0!important}
+      .industry-photo{height:104px!important}
+      .industry-title{font-size:18px!important}
+      .industry-card-table{height:auto!important}
+      .industry-title-row{height:auto!important}
+      .industry-body{height:215px!important}
+      .industry-vgap{height:14px!important}
+      .trend-title{font-size:15px!important}
+      .trend-copy{font-size:12.5px!important}
+      .usecase-left,.usecase-right{display:block!important;width:100%!important;max-width:100%!important}
+      .usecase-left{border-right:0!important;border-bottom:1px solid #E5E7EB!important;padding:0 0 14px 0!important}
+      .usecase-right{padding-top:8px!important}
+      .usecase-main{padding-left:18px!important;padding-right:18px!important}
+      .usecase-heading{font-size:17px!important}
+      .company-logo-col{width:64px!important}
+      .company-logo-box{width:54px!important;height:48px!important}
+      .footer-left,.footer-right{display:block!important;width:100%!important;text-align:left!important}
+      .footer-right{padding-top:24px!important}
+      .footer-pad{padding-left:20px!important;padding-right:20px!important;padding-top:24px!important;padding-bottom:26px!important}
+    }
+
+    @media only screen and (max-width:480px){
+      .hero-pad{padding-left:16px!important;padding-right:16px!important}
+      .hero-title{font-size:28px!important}
+      .hero-logo{width:80px!important}
+      .content-pad{padding-left:16px!important;padding-right:16px!important}
+      .section-title{font-size:24px!important}
+      .industry-card-table{height:auto!important}
+      .industry-body{height:230px!important}
+      .footer-pad{padding-left:16px!important;padding-right:16px!important}
+    }
+  
+    /* Forward-safe: all decorative photography is a real IMG, never a CSS/VML background. */
+    .hero-photo-img,.industry-img,.footer-smile-img{display:block;border:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic;}
+    .hero-photo-img{display:block;width:100%;max-width:920px;height:80px;object-fit:cover;object-position:center center;}
+    .hero-photo-cell{height:80px;line-height:0;font-size:0;overflow:hidden;}
+    /* Fixed-size photo frame with cover-crop so all four primary cards share the same image window without stretching. */
+    .industry-photo-cell{padding:0!important;height:94px;line-height:0;font-size:0;overflow:hidden;border-radius:16px;background-color:#FFFFFF;}
+    .industry-img{display:block;width:100%;max-width:100%;height:auto;border-radius:16px;}
+    @media only screen and (max-width:720px){
+      .hero-photo-img{width:100%!important;max-width:100%!important;height:80px!important;object-fit:cover!important;object-position:center center!important;}
+      .industry-photo-cell{padding:0!important;height:104px!important;border-radius:16px!important;}
+      .industry-img{width:100%!important;max-width:100%!important;height:auto!important;border-radius:16px!important;}
+      .industry-title-row{padding-left:12px!important;padding-right:12px!important;}
+      .footer-smile-img{width:150px!important;max-width:150px!important;}
+    }
+
+    .industry-row{
+      display:table-row;
+    }
+    .industry-col{
+      display:table-cell;
+      vertical-align:top;
+      height:auto!important;
+    }
+    .industry-card-table{
+      height:100%!important;
+      vertical-align:top;
+    }
+
+    .industry-card-table > tbody > tr:last-child,
+    .industry-card-table > tr:last-child{
+      height:100%;
+    }
+
+    .industry-body{
+      height:auto!important;
+      vertical-align:top!important;
+    }
+
+    .industry-title-row{
+      height:58px!important;
+      padding:0 12px!important;
+      vertical-align:middle!important;
+    }
+
+    .industry-title-row > table{
+      height:58px!important;
+    }
+
+    .industry-title-row td{
+      vertical-align:middle!important;
+    }
+
+    .industry-title{
+      display:block;
+      line-height:22px!important;
+      margin-top:2px!important;
+    }
+
+    .industry-card-table > tbody > tr:last-child > td,
+    .industry-card-table > tr:last-child > td{
+      vertical-align:top!important;
+    }
+    .industry-body{
+      vertical-align:top!important;
+    }
+
+</style>
+</head>
+<body style="margin:0;padding:0;background-color:#ECEFF1;font-family:'Amazon Ember',Arial,Helvetica,sans-serif;color:#333E48;"><!-- FORWARD-SAFE VERSION: photography uses normal IMG elements; no decorative CSS/VML backgrounds. -->
+<center aria-roledescription="email" lang="en" role="article" style="width:100%;background-color:#ECEFF1;">
+<table border="0" cellpadding="0" cellspacing="0" role="presentation" style="width:100%;background-color:#ECEFF1;" width="100%">
+<tr>
+<td align="center" class="outer-pad" style="padding:28px 0;">
+<!--[if mso]>
+          <table role="presentation" width="920" cellpadding="0" cellspacing="0" border="0"><tr><td width="920">
+          <![endif]-->
+<table border="0" cellpadding="0" cellspacing="0" class="email-container page-shell" role="presentation" style="width:100%;max-width:920px;background-color:#FFFFFF;border-radius:16px;box-shadow:0 14px 42px rgba(51,62,72,.14);overflow:hidden;border-collapse:separate;border-spacing:0;vertical-align:top;" width="100%">
+<!-- HERO -->
+<!-- Header gradient: CSS + WebKit fallback -->
+<tr><td bgcolor="#2C0A6C" style="background-color:#2C0A6C;background:#2C0A6C;background-image:-webkit-linear-gradient(90deg,#2C0A6C 0%,#BE2BDF 50%,#2C0A6C 100%);background-image:linear-gradient(90deg,#2C0A6C 0%,#BE2BDF 50%,#2C0A6C 100%);mso-background-color:#2C0A6C;" valign="middle"><table border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%"><tr><td class="hero-pad" style="padding:24px 44px;"><table border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%"><tr><td style="font-family:'Amazon Ember',Arial,Helvetica,sans-serif;color:#FFFFFF;" valign="middle"><div class="hero-title" style="margin:0;font-size:48px;line-height:48px;font-weight:700;letter-spacing:-1.7px;color:#FFFFFF;white-space:nowrap;mso-line-height-rule:exactly;">AI Industry Pulse</div></td><td align="right" style="width:130px;" valign="middle" width="130"><img alt="AWS" class="hero-logo" src="https://raw.githubusercontent.com/mediaitalyopinno/aws-newsletter/main/corporate/aws-logo.png" style="width:118px;max-width:118px;height:auto;display:block;margin-left:auto;" width="118"/></td></tr></table></td></tr></table></td></tr>
+<tr><td height="4" style="height:4px;line-height:4px;font-size:0;background-color:#FF9900;"> </td></tr>
+<!-- INTRO -->
+<tr><td class="intro-top" height="52" style="height:52px;line-height:52px;font-size:0;"> </td></tr>
+<tr>
+<td class="content-pad" style="padding:0 44px;">
+<div class="intro-title" style="font-family:'Amazon Ember',Arial,Helvetica,sans-serif;font-size:28px;line-height:32px;font-weight:700;color:#333E48;margin:0 0 10px 0;mso-line-height-rule:exactly;">EMEA GTM Industries Pulse</div>
+<div style="font-family:Arial,sans-serif;font-size:12px;line-height:16px;font-weight:400;color:#FF9900;margin:0 0 10px 0;mso-line-height-rule:exactly;"><b>Surge Acceleration Team — September 2026</b></div>
+<div style="font-family:'Amazon Ember',Arial,Helvetica,sans-serif;font-size:14px;line-height:22px;font-weight:400;color:#66727C;margin:0 0 12px 0;max-width:780px;mso-line-height-rule:exactly;">The EMEA GTM Surge Acceleration team helps Surge and selected EMEA customers accelerate GenAI use cases from opportunity to production. We provide LoB CxOs with actionable, industry-specific recommendations and connect them with the right AWS expertise, partners and ISVs.</div>
+<div style="font-family:'Amazon Ember',Arial,Helvetica,sans-serif;font-size:14px;line-height:22px;font-weight:400;color:#66727C;margin:0;max-width:780px;mso-line-height-rule:exactly;">Across Healthcare & Life Sciences, Travel & Hospitality, Media, Entertainment, Games & Sports, and ISVs, one signal is clear: customers are moving beyond GenAI experimentation toward <b>agentic systems, semantic data foundations and enterprise-scale AI governance.</b></div>
+</td>
+</tr>
+<tr><td height="58" style="height:58px;line-height:58px;font-size:0;"> </td></tr>
+<!-- INDUSTRY SECTION TITLE -->
+<tr>
+<td class="content-pad" style="padding:0 44px;">
+<div class="section-title" style="font-family:'Amazon Ember',Arial,Helvetica,sans-serif;font-size:29px;line-height:32px;font-weight:700;color:#333E48;margin:0;mso-line-height-rule:exactly;">The trends we’re spotting in the market</div>
+</td>
+</tr>
+<tr><td height="24" style="height:24px;line-height:24px;font-size:0;"> </td></tr>
+<!-- INDUSTRY GRID -->
+<tr>
+<td class="content-pad" style="padding:0 44px;">
+<table border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%" style="height:100%;">
+<tr class="industry-row" style="vertical-align:top;">
+<td class="industry-col" style="width:408px;height:100%;" valign="top" width="408">
+<!-- CARD: HEALTH -->
+<table border="0" cellpadding="0" cellspacing="0" class="industry-card-table" role="presentation" style="width:100%;border:1px solid #D3C3DF;border-radius:24px;background-color:#FFFFFF;overflow:hidden;border-collapse:separate;border-spacing:0;vertical-align:top;" width="100%">
+<tr style="vertical-align:top;">
+<td style="padding:8px 8px 0 8px!important;mso-padding-alt:8px 8px 0 8px;vertical-align:top;" valign="top">
+<table border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%">
+<tr>
+<td align="center" class="industry-photo-cell" style="padding:0;background-color:#FFFFFF;line-height:0;font-size:0;height:94px;overflow:hidden;vertical-align:top;border-radius:16px;" valign="top"><img alt="" class="industry-img" src="https://raw.githubusercontent.com/mediaitalyopinno/aws-newsletter/main/topics%20pictures/healthcare-life-sciences-pic.png" style="display:block;width:100%;max-width:100%;height:auto;border:0;outline:none;text-decoration:none;border-radius:16px;" width="390"/></td>
+</tr><tr><td height="8" style="height:8px;line-height:8px;font-size:0;"> </td></tr><tr><td><table border="0" cellpadding="0" cellspacing="0" role="presentation" style="width:100%;background-color:#172D54;border-radius:16px;overflow:hidden;border-collapse:separate;border-spacing:0;vertical-align:top;" width="100%"><tr><td bgcolor="#172D54" class="industry-title-row" style="padding:0 12px;background-color:#172D54;border-radius:16px;height:58px;mso-padding-alt:0 12px 0 12px;" valign="middle"><table border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%"><tr><td valign="middle" width="34"><table border="0" cellpadding="0" cellspacing="0" class="small-icon-box" role="presentation" style="width:34px;height:34px;border:1px solid #D8DDE2;background-color:#FFFFFF;border-radius:8px;overflow:hidden;border-collapse:separate;border-spacing:0;" width="34"><tr><td align="center" height="34" style="width:34px;height:34px;" valign="middle"><img alt="" height="19" src="https://raw.githubusercontent.com/mediaitalyopinno/aws-newsletter/main/sector-icons/healthcare-life-sciences.png" style="width:19px;height:19px;display:block;" width="19"/></td></tr></table></td><td style="width:11px;font-size:0;line-height:0;" width="11"> </td><td valign="middle"><div class="industry-title" style="font-family:'Amazon Ember',Arial,Helvetica,sans-serif;font-size:20px;line-height:22px;font-weight:700;color:#FFFFFF;letter-spacing:-.3px;mso-line-height-rule:exactly;">Healthcare &amp; Life Sciences</div></td></tr></table></td></tr></table></td></tr>
+</table>
+</td>
+</tr>
+<tr>
+<td class="industry-body" height="460" style="height:460px;padding:10px 20px 18px 20px;mso-padding-alt:10px 20px 18px 20px;vertical-align:top;" valign="top">
+<table border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%">
+<tr>
+<td style="width:11px;padding-top:6px;font-family:Arial,sans-serif;font-size:18px;line-height:18px;color:#FF9900;" valign="top" width="11">•</td>
+<td style="padding:0 0 7px 0;">
+<div class="trend-title" style="font-family:'Amazon Ember',Arial,Helvetica,sans-serif;font-size:15.5px;line-height:19px;font-weight:700;color:#172A66;margin:0 0 5px 10px;mso-line-height-rule:exactly;">Semantic Data Foundations & Agentic AI Systems</div>
+<div class="trend-copy" style="font-family:'Amazon Ember',Arial,Helvetica,sans-serif;font-size:12.6px;line-height:18px;color:#53606B;margin-left:10px;mso-line-height-rule:exactly;">
+    Life sciences organizations are prioritizing ontology and semantic data layers as the foundation for agentic AI. Norstella is connecting preclinical, clinical, commercial and payer ontologies, while Boehringer Ingelheim, Chiesi and ICON are advancing agentic workflows across research, regulatory and clinical operations.
+</div>
+
+<!--[if mso]>
+<v:roundrect xmlns:v="urn:schemas-microsoft-com:vml"
+  arcsize="8%"
+  strokecolor="#FF9900"
+  strokeweight="1px"
+  fillcolor="#FFFFFF"
+  style="width:368px;">
+  <v:textbox inset="10px,6px,10px,6px">
+<![endif]-->
+
+<div class="trend-highlight" style="font-family:'Amazon Ember',Arial,Helvetica,sans-serif;font-size:12.6px;line-height:18px;color:#53606B;mso-line-height-rule:exactly;background-color:#FFFFFF;border:1px solid #FF9900;border-radius:8px;padding:6px 10px;margin-top:8px;width:100%;box-sizing:border-box;">
+    <b>AWS angle:</b> Norstella aligned with AWS on an end-to-end ontology connecting the Molecular Index Code with clinical, commercial and payer data.
+</div>
+
+<!--[if mso]>
+</v:textbox>
+</v:roundrect>
+<![endif]-->
+
+<!--[if mso]>
+  </v:textbox>
+</v:roundrect>
+<![endif]--></td>
+</tr>
+<tr><td colspan="2" height="4" style="height:4px;line-height:4px;font-size:0;"> </td></tr>
+<tr>
+<td style="width:11px;padding-top:6px;font-family:Arial,sans-serif;font-size:18px;line-height:18px;color:#FF9900;" valign="top" width="11">•</td>
+<td style="padding:0 0 7px 10px;">
+<div class="trend-title" style="font-family:'Amazon Ember',Arial,Helvetica,sans-serif;font-size:15.5px;line-height:19px;font-weight:700;color:#172A66;margin:0 0 5px 0;mso-line-height-rule:exactly;">Trusted Research Environments & Governed Health Data Platforms</div>
+<div class="trend-copy" style="font-family:'Amazon Ember',Arial,Helvetica,sans-serif;font-size:12.6px;line-height:18px;color:#53606B;mso-line-height-rule:exactly;">
+    Healthcare is converging on governed platforms for secure, multi-stakeholder data access. KAUST is implementing Trusted Research Environments, Oura is developing Longitudinal Health Data Platforms, and Topicus Healthcare is participating in Dutch national health data exchange pilots. These models combine consent, provenance and compliance, reflecting the Seven Safes framework for patient confidentiality at national scale.
+
+<!--[if mso]>
+  </v:textbox>
+</v:roundrect>
+<![endif]-->
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+<td class="industry-gap" style="width:16px;font-size:0;line-height:0;" width="16"> </td>
+<td class="industry-col" style="width:408px;height:100%;" valign="top" width="408">
+<!-- CARD: TRAVEL -->
+<table border="0" cellpadding="0" cellspacing="0" class="industry-card-table" role="presentation" style="width:100%;border:1px solid #D3C3DF;border-radius:24px;background-color:#FFFFFF;overflow:hidden;border-collapse:separate;border-spacing:0;vertical-align:top;" width="100%">
+<tr style="vertical-align:top;"><td style="padding:8px 8px 0 8px!important;mso-padding-alt:8px 8px 0 8px;vertical-align:top;" valign="top">
+<table border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%"><tr>
+<td align="center" class="industry-photo-cell" style="padding:0;background-color:#FFFFFF;line-height:0;font-size:0;height:94px;overflow:hidden;vertical-align:top;border-radius:16px;" valign="top"><img alt="" class="industry-img" src="https://raw.githubusercontent.com/mediaitalyopinno/aws-newsletter/main/topics%20pictures/travel-hospitality-pic.png" style="display:block;width:100%;max-width:100%;height:auto;border:0;outline:none;text-decoration:none;border-radius:16px;" width="390"/></td>
+</tr><tr><td height="8" style="height:8px;line-height:8px;font-size:0;"> </td></tr><tr><td><table border="0" cellpadding="0" cellspacing="0" role="presentation" style="width:100%;background-color:#172D54;border-radius:16px;overflow:hidden;border-collapse:separate;border-spacing:0;" width="100%"><tr><td bgcolor="#172D54" class="industry-title-row" style="padding:0 12px;background-color:#172D54;border-radius:16px;height:58px;mso-padding-alt:0 12px 0 12px;" valign="middle"><table border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%"><tr><td valign="middle" width="34"><table border="0" cellpadding="0" cellspacing="0" class="small-icon-box" role="presentation" style="width:34px;height:34px;border:1px solid #D8DDE2;background-color:#FFFFFF;border-radius:8px;overflow:hidden;border-collapse:separate;border-spacing:0;" width="34"><tr><td align="center" height="34" style="width:34px;height:34px;" valign="middle"><img alt="" height="19" src="https://raw.githubusercontent.com/mediaitalyopinno/aws-newsletter/main/sector-icons/travel-hospitality.png" style="width:19px;height:19px;display:block;" width="19"/></td></tr></table></td><td style="width:11px;font-size:0;line-height:0;" width="11"> </td><td valign="middle"><div class="industry-title" style="font-family:'Amazon Ember',Arial,Helvetica,sans-serif;font-size:20px;line-height:22px;font-weight:700;color:#FFFFFF;letter-spacing:-.3px;mso-line-height-rule:exactly;">Travel &amp; Hospitality</div></td></tr></table></td></tr></table></td></tr></table>
+</td></tr>
+<tr><td class="industry-body" height="460" style="height:460px;padding:10px 20px 18px 20px;mso-padding-alt:10px 20px 18px 20px;vertical-align:top;" valign="top"><table border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%">
+<tr><td style="width:11px;padding-top:6px;font-family:Arial,sans-serif;font-size:18px;line-height:18px;color:#FF9900;" valign="top" width="11">•</td><td style="padding:0 0 7px 10px;"><div class="trend-title" style="font-family:'Amazon Ember',Arial,Helvetica,sans-serif;font-size:15.5px;line-height:19px;font-weight:700;color:#172A66;margin:0 0 5px 0;">Travel Industry Shifts from GenAI Experimentation to Agentic Production with Pricing and Cost Control Challenges</div>
+<div class="trend-copy" style="font-family:'Amazon Ember',Arial,Helvetica,sans-serif;font-size:12.6px;line-height:18px;color:#53606B;mso-line-height-rule:exactly;">
+Travel is moving from GenAI experimentation toward operational AI deployment. easyJet is migrating 400 users to Claude on Amazon Bedrock, Amadeus is scaling Kiro from 1.5K toward 5K users, and Google launched agentic hotel booking with Expedia, Booking.com, Hilton and Marriott.</div>
+
+<!--[if mso]>
+<v:roundrect xmlns:v="urn:schemas-microsoft-com:vml"
+  arcsize="8%"
+  strokecolor="#FF9900"
+  strokeweight="1px"
+  fillcolor="#FFFFFF"
+  style="width:600px;">
+  <v:textbox inset="10px,6px,10px,6px">
+<![endif]-->
+
+<div class="trend-highlight" style="font-family:'Amazon Ember',Arial,Helvetica,sans-serif;font-size:12.6px;line-height:18px;color:#53606B;mso-line-height-rule:exactly;background-color:#FFFFFF;border:1px solid #FF9900;border-radius:8px;padding:6px 10px;margin-top:8px;">
+    <b>AWS angle:</b> easyJet is moving to Bedrock for sovereignty, while Amadeus received $200K in AWS credits to address pricing concerns.
+</div>
+
+<!--[if mso]>
+  </v:textbox>
+</v:roundrect>
+<![endif]--></td></tr>
+<tr><td colspan="2" height="4" style="height:4px;line-height:4px;font-size:0;"> </td></tr>
+<tr><td style="width:11px;padding-top:6px;font-family:Arial,sans-serif;font-size:18px;line-height:18px;color:#FF9900;" valign="top" width="11">•</td><td style="padding:0 0 7px 10px;"><div class="trend-title" style="font-family:'Amazon Ember',Arial,Helvetica,sans-serif;font-size:15.5px;line-height:19px;font-weight:700;color:#172A66;margin:0 0 5px 0;">Enterprise Cost Control as the Production Unlock</div><div class="trend-copy" style="font-family:'Amazon Ember',Arial,Helvetica,sans-serif;font-size:12.6px;line-height:18px;color:#53606B;mso-line-height-rule:exactly;">
+Cost visibility is becoming critical as enterprise AI scales. Amadeus scaled Kiro after GitHub Copilot pricing increased 3–4x, while easyJet is facing cost attribution and IAM challenges as it migrates 400 users to Claude on Bedrock.</div>
+
+<!--[if mso]>
+<v:roundrect xmlns:v="urn:schemas-microsoft-com:vml"
+  arcsize="8%"
+  strokecolor="#FF9900"
+  strokeweight="1px"
+  fillcolor="#FFFFFF"
+  style="width:600px;">
+  <v:textbox inset="10px,6px,10px,6px">
+<![endif]-->
+
+<div class="trend-highlight" style="font-family:'Amazon Ember',Arial,Helvetica,sans-serif;font-size:12.6px;line-height:18px;color:#53606B;mso-line-height-rule:exactly;background-color:#FFFFFF;border:1px solid #FF9900;border-radius:8px;padding:6px 10px;margin-top:8px;">
+    <b>AWS angle:</b> Amazon Bedrock introduced principal-based attribution, Projects and per-request tagging to support production-scale AI deployments.
+</div>
+
+<!--[if mso]>
+  </v:textbox>
+</v:roundrect>
+<![endif]-->
+</table></td></tr>
+</table>
+</td>
+</tr>
+<tr><td class="industry-vgap" colspan="3" height="16" style="height:16px;line-height:16px;font-size:0;"> </td></tr>
+<tr class="industry-row" style="vertical-align:top;">
+<td class="industry-col" style="width:408px;height:100%;" valign="top" width="408">
+<!-- CARD: MEGS -->
+<table border="0" cellpadding="0" cellspacing="0" class="industry-card-table" role="presentation" style="width:100%;border:1px solid #D3C3DF;border-radius:24px;background-color:#FFFFFF;overflow:hidden;border-collapse:separate;border-spacing:0;" width="100%">
+<tr style="vertical-align:top;"><td style="padding:8px 8px 0 8px!important;mso-padding-alt:8px 8px 0 8px;vertical-align:top;" valign="top"><table border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%"><tr>
+<td align="center" class="industry-photo-cell" style="padding:0;background-color:#FFFFFF;line-height:0;font-size:0;height:94px;overflow:hidden;vertical-align:top;border-radius:16px;" valign="top"><img alt="" class="industry-img" src="https://raw.githubusercontent.com/mediaitalyopinno/aws-newsletter/main/topics%20pictures/media-entertainment-games-sports-pic.png" style="display:block;width:100%;max-width:100%;height:auto;border:0;outline:none;text-decoration:none;border-radius:16px;" width="390"/></td>
+</tr><tr><td height="8" style="height:8px;line-height:8px;font-size:0;"> </td></tr><tr><td><table border="0" cellpadding="0" cellspacing="0" role="presentation" style="width:100%;background-color:#172D54;border-radius:16px;overflow:hidden;border-collapse:separate;border-spacing:0;" width="100%"><tr><td bgcolor="#172D54" class="industry-title-row" style="padding:0 12px;background-color:#172D54;border-radius:16px;height:58px;mso-padding-alt:0 12px 0 12px;" valign="middle"><table border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%"><tr><td valign="middle" width="34"><table border="0" cellpadding="0" cellspacing="0" class="small-icon-box" role="presentation" style="width:34px;height:34px;border:1px solid #D8DDE2;background-color:#FFFFFF;border-radius:8px;overflow:hidden;border-collapse:separate;border-spacing:0;" width="34"><tr><td align="center" height="34" style="width:34px;height:34px;" valign="middle"><img alt="" height="19" src="https://raw.githubusercontent.com/mediaitalyopinno/aws-newsletter/main/sector-icons/media-entertainment-games-sports.png" style="width:19px;height:19px;display:block;" width="19"/></td></tr></table></td><td style="width:11px;font-size:0;line-height:0;" width="11"> </td><td valign="middle"><div class="industry-title" style="font-family:'Amazon Ember',Arial,Helvetica,sans-serif;font-size:20px;line-height:22px;font-weight:700;color:#FFFFFF;letter-spacing:-.3px;mso-line-height-rule:exactly;">Media, Entertainment,<br/>Games &amp; Sports</div></td></tr></table></td></tr></table></td></tr></table></td></tr>
+<tr><td class="industry-body" height="480" style="height:480px;padding:10px 20px 18px 20px;mso-padding-alt:10px 20px 18px 20px;vertical-align:top;" valign="top"><table border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%">
+<tr><td style="width:11px;padding-top:6px;font-family:Arial,sans-serif;font-size:18px;line-height:18px;color:#FF9900;" valign="top" width="11">•</td><td style="padding:0 0 7px 10px;"><div class="trend-title" style="font-family:'Amazon Ember',Arial,Helvetica,sans-serif;font-size:15.5px;line-height:19px;font-weight:700;color:#172A66;margin:0 0 5px 0;">CEE Gaming Consolidates Around Live-Service Models + Practical AI</div><div class="trend-copy" style="font-family:'Amazon Ember',Arial,Helvetica,sans-serif;font-size:12.6px;line-height:18px;color:#53606B;">CEE gaming studios are consolidating around evergreen live-service titles while adopting practical AI. Playrix runs GPU-intensive GenAI on H100 for visual-asset generation and migrated engineering from Cursor to Claude Code on Bedrock. Wargaming increased Claude spend 45x in two months, from $2,300 to $104,000 MRR.</div><div class="trend-highlight" style="font-family:'Amazon Ember',Arial,Helvetica,sans-serif;font-size:12.6px;line-height:18px;color:#53606B;background-color:#FFFFFF;border:1px solid #FF9900;border-radius:8px;padding:6px 10px;margin-top:8px;"><b>AWS angle:</b> Bedrock cost attribution enabled broader developer access at Wargaming, while Playrix moved engineering-wide to Claude Code on Bedrock.</div></td></tr>
+<tr><td colspan="2" height="4" style="height:4px;line-height:4px;font-size:0;"> </td></tr>
+<tr><td style="width:11px;padding-top:6px;font-family:Arial,sans-serif;font-size:18px;line-height:18px;color:#FF9900;" valign="top" width="11">•</td><td style="padding:0 0 7px 10px;"><div class="trend-title" style="font-family:'Amazon Ember',Arial,Helvetica,sans-serif;font-size:15.5px;line-height:19px;font-weight:700;color:#172A66;margin:0 0 5px 0;">EMEA Publishing Under AI-Driven Traffic Collapse</div><div class="trend-copy" style="font-family:'Amazon Ember',Arial,Helvetica,sans-serif;font-size:12.6px;line-height:18px;color:#53606B;">Generative AI is disrupting publisher traffic: users click traditional links in only 8% of searches with AI summaries versus 15% without. Traffic via OpenAI is 750x harder and Anthropic 30,000x harder, increasing pressure on publishers to rethink licensing, content protection and newsroom AI.</div><div class="trend-highlight" style="font-family:'Amazon Ember',Arial,Helvetica,sans-serif;font-size:12.6px;line-height:18px;color:#53606B;background-color:#FFFFFF;border:1px solid #FF9900;border-radius:8px;padding:6px 10px;margin-top:8px;"><b>AWS angle:</b> AWS BD is qualifying three use cases: archive licensing/RAG, WAF Bot Control + C2PA provenance, and assistive newsroom AI.</div></td></tr>
+</table></td></tr>
+</table>
+</td>
+<td class="industry-gap" style="width:16px;font-size:0;line-height:0;" width="16"> </td>
+<td class="industry-col" style="width:408px;height:100%;" valign="top" width="408">
+<!-- CARD: ISV -->
+<table border="0" cellpadding="0" cellspacing="0" class="industry-card-table" role="presentation" style="width:100%;border:1px solid #D3C3DF;border-radius:24px;background-color:#FFFFFF;overflow:hidden;border-collapse:separate;border-spacing:0;" width="100%">
+<tr style="vertical-align:top;"><td style="padding:8px 8px 0 8px!important;mso-padding-alt:8px 8px 0 8px;vertical-align:top;" valign="top"><table border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%"><tr>
+<td align="center" class="industry-photo-cell" style="padding:0;background-color:#FFFFFF;line-height:0;font-size:0;height:94px;overflow:hidden;vertical-align:top;border-radius:16px;" valign="top"><img alt="" class="industry-img" src="https://raw.githubusercontent.com/mediaitalyopinno/aws-newsletter/main/topics%20pictures/independent-software-vendors-pic.png" style="display:block;width:100%;max-width:100%;height:auto;border:0;outline:none;text-decoration:none;border-radius:16px;" width="390"/></td>
+</tr><tr><td height="8" style="height:8px;line-height:8px;font-size:0;"> </td></tr><tr><td><table border="0" cellpadding="0" cellspacing="0" role="presentation" style="width:100%;background-color:#172D54;border-radius:16px;overflow:hidden;border-collapse:separate;border-spacing:0;" width="100%"><tr><td bgcolor="#172D54" class="industry-title-row" style="padding:0 12px;background-color:#172D54;border-radius:16px;height:58px;mso-padding-alt:0 12px 0 12px;" valign="middle"><table border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%"><tr><td valign="middle" width="34"><table border="0" cellpadding="0" cellspacing="0" class="small-icon-box" role="presentation" style="width:34px;height:34px;border:1px solid #D8DDE2;background-color:#FFFFFF;border-radius:8px;overflow:hidden;border-collapse:separate;border-spacing:0;" width="34"><tr><td align="center" height="34" style="width:34px;height:34px;" valign="middle"><img alt="" height="19" src="https://raw.githubusercontent.com/mediaitalyopinno/aws-newsletter/main/sector-icons/independent-software-vendors.png" style="width:19px;height:19px;display:block;" width="19"/></td></tr></table></td><td style="width:11px;font-size:0;line-height:0;" width="11"> </td><td valign="middle"><div class="industry-title" style="font-family:'Amazon Ember',Arial,Helvetica,sans-serif;font-size:20px;line-height:22px;font-weight:700;color:#FFFFFF;letter-spacing:-.3px;mso-line-height-rule:exactly;">Independent Software<br/>Vendors</div></td></tr></table></td></tr></table></td></tr></table></td></tr>
+<tr><td class="industry-body" height="480" style="height:480px;padding:10px 20px 18px 20px;mso-padding-alt:10px 20px 18px 20px;vertical-align:top;" valign="top"><table border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%">
+<tr><td style="width:11px;padding-top:6px;font-family:Arial,sans-serif;font-size:18px;line-height:18px;color:#FF9900;" valign="top" width="11">•</td><td style="padding:0 0 7px 10px;"><div class="trend-title" style="font-family:'Amazon Ember',Arial,Helvetica,sans-serif;font-size:15.5px;line-height:19px;font-weight:700;color:#172A66;margin:0 0 5px 0;">Multi-Agent AI Architectures Gain Enterprise Traction</div><div class="trend-copy" style="font-family:'Amazon Ember',Arial,Helvetica,sans-serif;font-size:12.6px;line-height:18px;color:#53606B;">Customers are moving beyond single-model inference toward multi-agent orchestration. Spotnana launched specialized agents for corporate travel, dsm-firmenich is prioritizing co-scientist orchestration with shared multi-agent frameworks, and EMEA HCLS accounts are exploring autonomous research workbenches and clinical trial automation. Research shows architectural choices can create 100x latency differences and coordination success rates ranging from above 90% to below 30%.</div>
+<tr><td colspan="2" height="4" style="height:4px;line-height:4px;font-size:0;"> </td></tr>
+<tr><td style="width:11px;padding-top:6px;font-family:Arial,sans-serif;font-size:18px;line-height:18px;color:#FF9900;" valign="top" width="11">•</td><td style="padding:0 0 7px 10px;"><div class="trend-title" style="font-family:'Amazon Ember',Arial,Helvetica,sans-serif;font-size:15.5px;line-height:19px;font-weight:700;color:#172A66;margin:0 0 5px 0;">Platform Consolidation &amp; Unified AI Governance</div><div class="trend-copy" style="font-family:'Amazon Ember',Arial,Helvetica,sans-serif;font-size:12.6px;line-height:18px;color:#53606B;">Enterprises face common challenges around IAM federation, cost attribution, MCP complexity and skills as they consolidate AI access. Wargaming, easyJet and Playrix show the same pattern: customers are seeking unified AI governance through a single platform, with cost visibility becoming critical for adoption at scale.</b></div><div class="trend-highlight" style="font-family:'Amazon Ember',Arial,Helvetica,sans-serif;font-size:12.6px;line-height:18px;color:#53606B;background-color:#FFFFFF;border:1px solid #FF9900;border-radius:8px;padding:6px 10px;margin-top:8px;"><b>AWS angle:</b> AAmazon introduced principal-based cost attribution, application-level Projects and per-request metadata tagging on Bedrock.</div></td></tr>
+</table></td></tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr><td height="46" style="height:46px;line-height:46px;font-size:0;"> </td></tr>
+<!-- USE CASES TITLE -->
+<tr>
+<td class="content-pad" style="padding:0 44px;">
+<div class="section-title" style="font-family:'Amazon Ember',Arial,Helvetica,sans-serif;font-size:29px;line-height:32px;font-weight:700;color:#333E48;margin:0;">Discover who’s gaining traction</div>
+</td>
+</tr>
+<tr><td height="20" style="height:20px;line-height:20px;font-size:0;"> </td></tr>
+<!-- USE CASE 1 -->
+<tr><td class="content-pad" style="padding:0 44px;">
+<table border="0" cellpadding="0" cellspacing="0" class="usecase-card-table" role="presentation" style="width:100%;border:1px solid #D3C3DF;border-radius:24px;background-color:#FFFFFF;overflow:hidden;border-collapse:separate;border-spacing:0;" width="100%">
+<tr><td colspan="2" style="padding:0;"><table border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%"><tr><td bgcolor="#45117A" height="5" style="height:5px;background:#45117A;font-size:0;line-height:0;" width="25%"> </td><td bgcolor="#8F14C8" style="background:#8F14C8;font-size:0;line-height:0;" width="25%"> </td><td bgcolor="#D71CBB" style="background:#D71CBB;font-size:0;line-height:0;" width="25%"> </td><td bgcolor="#FF9900" style="background:#FF9900;font-size:0;line-height:0;" width="25%"> </td></tr></table></td></tr>
+<tr><td class="usecase-main" colspan="2" style="padding:13px 22px 18px 22px;">
+<table border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%"><tr>
+<td class="usecase-left" style="width:210px;padding-right:18px;border-right:1px solid #E5E7EB;" valign="middle" width="210">
+<table border="0" cellpadding="0" cellspacing="0" role="presentation"><tr><td valign="middle" width="42"><table border="0" cellpadding="0" cellspacing="0" class="small-icon-box" role="presentation" style="width:42px;height:42px;border:1px solid #D8CBE3;background-color:#FFFFFF;border-radius:8px;overflow:hidden;border-collapse:separate;border-spacing:0;" width="42"><tr><td align="center" height="42" style="width:42px;height:42px;" valign="middle"><img alt="" height="22" src="https://raw.githubusercontent.com/mediaitalyopinno/aws-newsletter/main/sector-icons/healthcare-life-sciences.png" style="width:22px;height:22px;" width="22"/></td></tr></table></td><td style="width:12px;font-size:0;" width="12"> </td><td><div class="usecase-heading" style="font-family:'Amazon Ember',Arial,Helvetica,sans-serif;font-size:18px;line-height:21px;font-weight:700;color:#152A68;">Healthcare &amp; Life Sciences</div></td></tr></table>
+</td>
+<td class="usecase-right" style="padding-left:24px;" valign="top">
+<table border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%">
+<tr><td class="company-logo-col" style="width:82px;" valign="middle" width="82"><table border="0" cellpadding="0" cellspacing="0" class="company-logo-box" height="54" role="presentation" style="width:60px;height:54px;border:1px solid #E2E4E7;background:#FFFFFF;border-radius:8px;overflow:hidden;border-collapse:separate;border-spacing:0;" width="60"><tr><td align="center" style="padding:8px 6px;" valign="middle"><img alt="Doctolib" src="https://raw.githubusercontent.com/mediaitalyopinno/aws-newsletter/main/company-logos/doctolib.png" style="width:48px;max-width:48px;height:auto;" width="48"/></td></tr></table></td><td style="padding:12px 0 13px 0;" valign="middle"><div style="font-family:'Amazon Ember',Arial,Helvetica,sans-serif;font-size:14.5px;line-height:18px;font-weight:700;color:#252F3E;margin:0 0 5px 0;">Europe’s Largest Health-Tech Platform Builds French Medical Foundation Model</div><div style="font-family:'Amazon Ember',Arial,Helvetica,sans-serif;font-size:11.5px;line-height:17px;color:#5F6B75;">Doctolib is developing DoctoBERT, a French medical foundation model for ~80M users.
+AWS is exploring pharma GTM, clinical research and healthcare contact-center solutions.
+The engagement has created internal alignment and expanded contact mapping.
+It opens multiple paths for deeper healthcare AI collaboration.</div></td></tr>
+<tr><td bgcolor="#D8DDE2" colspan="2" height="1" style="height:1px;line-height:1px;font-size:0;background:#D8DDE2;"> </td></tr>
+<tr><td class="company-logo-col" style="width:82px;" valign="middle" width="82"><table border="0" cellpadding="0" cellspacing="0" class="company-logo-box" height="54" role="presentation" style="width:60px;height:54px;border:1px solid #E2E4E7;background:#FFFFFF;border-radius:8px;overflow:hidden;border-collapse:separate;border-spacing:0;" width="60"><tr><td align="center" style="padding:8px 6px;" valign="middle"><img alt="Norstella" src="https://raw.githubusercontent.com/mediaitalyopinno/aws-newsletter/main/company-logos/nortsella.png" style="width:48px;max-width:48px;height:auto;" width="48"/></td></tr></table></td><td style="padding:12px 0 2px 0;" valign="middle"><div style="font-family:'Amazon Ember',Arial,Helvetica,sans-serif;font-size:14.5px;line-height:18px;font-weight:700;color:#252F3E;margin:0 0 5px 0;">End-to-End Ontology Alignment Opens Dual Co-Development Paths</div><div style="font-family:'Amazon Ember',Arial,Helvetica,sans-serif;font-size:11.5px;line-height:17px;color:#5F6B75;">AWS and Norstella aligned on an end-to-end ontology connecting preclinical, clinical, commercial and payer data.
+A second co-development path focuses on agentic solutions on Norstella’s Atlas Platform.
+The engagement brings semantic data foundations and agentic AI together.
+Both workstreams are progressing toward deeper technical collaboration.</div></td></tr>
+</table>
+</td>
+</tr></table>
+</td></tr>
+</table>
+</td></tr>
+<tr><td height="14" style="height:14px;line-height:14px;font-size:0;"> </td></tr>
+<!-- USE CASE 2 -->
+<tr><td class="content-pad" style="padding:0 44px;">
+<table border="0" cellpadding="0" cellspacing="0" class="usecase-card-table" role="presentation" style="width:100%;border:1px solid #D3C3DF;border-radius:24px;background-color:#FFFFFF;overflow:hidden;border-collapse:separate;border-spacing:0;" width="100%">
+<tr><td colspan="2"><table border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%"><tr><td bgcolor="#45117A" height="5" style="height:5px;font-size:0;line-height:0;" width="25%"> </td><td bgcolor="#8F14C8" style="font-size:0;line-height:0;" width="25%"> </td><td bgcolor="#D71CBB" style="font-size:0;line-height:0;" width="25%"> </td><td bgcolor="#FF9900" style="font-size:0;line-height:0;" width="25%"> </td></tr></table></td></tr>
+<tr><td class="usecase-main" colspan="2" style="padding:13px 22px 18px 22px;"><table border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%"><tr>
+<td class="usecase-left" style="width:210px;padding-right:18px;border-right:1px solid #E5E7EB;" valign="middle" width="210"><table border="0" cellpadding="0" cellspacing="0" role="presentation"><tr><td valign="middle" width="42"><table border="0" cellpadding="0" cellspacing="0" class="small-icon-box" role="presentation" style="width:42px;height:42px;border:1px solid #D8CBE3;background-color:#FFFFFF;border-radius:8px;overflow:hidden;border-collapse:separate;border-spacing:0;" width="42"><tr><td align="center" height="42" style="width:42px;height:42px;" valign="middle"><img alt="" height="22" src="https://raw.githubusercontent.com/mediaitalyopinno/aws-newsletter/main/sector-icons/travel-hospitality.png" width="22"/></td></tr></table></td><td width="12"> </td><td><div class="usecase-heading" style="font-family:'Amazon Ember',Arial,Helvetica,sans-serif;font-size:18px;line-height:21px;font-weight:700;color:#152A68;">Travel &amp; Hospitality</div></td></tr></table></td>
+<td class="usecase-right" style="padding-left:24px;" valign="top"><table border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%">
+<tr><td class="company-logo-col" valign="middle" width="82"><table border="0" cellpadding="0" cellspacing="0" class="company-logo-box" height="54" role="presentation" style="border:1px solid #E2E4E7;background:#FFFFFF;border-radius:8px;overflow:hidden;border-collapse:separate;border-spacing:0;" width="60"><tr><td align="center" style="padding:8px 6px;" valign="middle"><img alt="Amadeus" src="https://raw.githubusercontent.com/mediaitalyopinno/aws-newsletter/main/company-logos/amadeus.png" style="width:48px;height:auto;" width="48"/></td></tr></table></td><td style="padding:12px 0 13px 0;" valign="middle"><div style="font-family:'Amazon Ember',Arial,Helvetica,sans-serif;font-size:14.5px;line-height:18px;font-weight:700;color:#252F3E;margin-bottom:5px;">Kiro Scales from 1.5K to 5K Users — AI-DLC Becomes the New SDLC</div><div style="font-family:'Amazon Ember',Arial,Helvetica,sans-serif;font-size:11.5px;line-height:17px;color:#5F6B75;">Amadeus is scaling Kiro from 1.5K to 5K users by March 2027, representing $1.7M ARR.
+Kiro supports specification-driven development, vibe coding and code modernization.
+AWS addressed adoption and pricing challenges, including $200K in credits.
+AI-DLC is becoming Amadeus’ new software development lifecycle model.</div></td></tr>
+<tr><td bgcolor="#D8DDE2" colspan="2" height="1" style="height:1px;font-size:0;line-height:1px;"> </td></tr>
+<tr><td class="company-logo-col" valign="middle" width="82"><table border="0" cellpadding="0" cellspacing="0" class="company-logo-box" height="54" role="presentation" style="border:1px solid #E2E4E7;background:#FFFFFF;border-radius:8px;overflow:hidden;border-collapse:separate;border-spacing:0;" width="60"><tr><td align="center" style="padding:8px 6px;" valign="middle"><img alt="EasyJet" src="https://raw.githubusercontent.com/mediaitalyopinno/aws-newsletter/main/company-logos/easyjet.png" style="width:48px;height:auto;" width="48"/></td></tr></table></td><td style="padding:12px 0 2px 0;" valign="middle"><div style="font-family:'Amazon Ember',Arial,Helvetica,sans-serif;font-size:14.5px;line-height:18px;font-weight:700;color:#252F3E;margin-bottom:5px;">Bedrock Migration to Consolidate All AI Access on a Single Platform</div><div style="font-family:'Amazon Ember',Arial,Helvetica,sans-serif;font-size:11.5px;line-height:17px;color:#5F6B75;">easyJet is migrating 400 users to Claude on Amazon Bedrock for sovereignty and security.
+The migration addresses IAM, cost attribution, MCP complexity and skills challenges.
+The objective is to consolidate model access onto a single centralized platform.
+This could ultimately include replacing existing Copilot-based access.</div></td></tr>
+</table></td>
+</tr></table></td></tr>
+</table>
+</td></tr>
+<tr><td height="14" style="height:14px;line-height:14px;font-size:0;"> </td></tr>
+<!-- USE CASE 3 -->
+<tr><td class="content-pad" style="padding:0 44px;">
+<table border="0" cellpadding="0" cellspacing="0" class="usecase-card-table" role="presentation" style="width:100%;border:1px solid #D3C3DF;border-radius:24px;background-color:#FFFFFF;overflow:hidden;border-collapse:separate;border-spacing:0;" width="100%">
+<tr><td colspan="2"><table border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%"><tr><td bgcolor="#45117A" height="5" style="height:5px;font-size:0;line-height:0;" width="25%"> </td><td bgcolor="#8F14C8" style="font-size:0;line-height:0;" width="25%"> </td><td bgcolor="#D71CBB" style="font-size:0;line-height:0;" width="25%"> </td><td bgcolor="#FF9900" style="font-size:0;line-height:0;" width="25%"> </td></tr></table></td></tr>
+<tr><td class="usecase-main" colspan="2" style="padding:13px 22px 18px 22px;"><table border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%"><tr>
+<td class="usecase-left" style="width:210px;padding-right:18px;border-right:1px solid #E5E7EB;" valign="middle" width="210"><table border="0" cellpadding="0" cellspacing="0" role="presentation"><tr><td valign="middle" width="42"><table border="0" cellpadding="0" cellspacing="0" class="small-icon-box" role="presentation" style="width:42px;height:42px;border:1px solid #D8CBE3;background-color:#FFFFFF;border-radius:8px;overflow:hidden;border-collapse:separate;border-spacing:0;" width="42"><tr><td align="center" height="42" style="width:42px;height:42px;" valign="middle"><img alt="" height="22" src="https://raw.githubusercontent.com/mediaitalyopinno/aws-newsletter/main/sector-icons/media-entertainment-games-sports.png" width="22"/></td></tr></table></td><td width="12"> </td><td><div class="usecase-heading" style="font-family:'Amazon Ember',Arial,Helvetica,sans-serif;font-size:18px;line-height:21px;font-weight:700;color:#152A68;">Media, Entertainment, Games &amp; Sports</div></td></tr></table></td>
+<td class="usecase-right" style="padding-left:24px;" valign="top"><table border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%">
+<tr><td class="company-logo-col" valign="middle" width="82"><table border="0" cellpadding="0" cellspacing="0" class="company-logo-box" height="54" role="presentation" style="border:1px solid #E2E4E7;background:#FFFFFF;border-radius:8px;overflow:hidden;border-collapse:separate;border-spacing:0;" width="60"><tr><td align="center" style="padding:8px 6px;" valign="middle"><img alt="Playrix & Wargaming" src="https://raw.githubusercontent.com/mediaitalyopinno/aws-newsletter/main/company-logos/playrix-wargaming.png" style="width:48px;height:auto;" width="48"/></td></tr></table></td><td style="padding:12px 0 13px 0;" valign="middle"><div style="font-family:'Amazon Ember',Arial,Helvetica,sans-serif;font-size:14.5px;line-height:18px;font-weight:700;color:#252F3E;margin-bottom:5px;">$78M PPA and 45x Spend Growth Anchor CEE Gaming Motion</div><div style="font-family:'Amazon Ember',Arial,Helvetica,sans-serif;font-size:11.5px;line-height:17px;color:#5F6B75;">Playrix secured a $78M PPA and migrated engineering from Cursor to Claude Code on Bedrock.
+Wargaming increased Claude spend 45x in two months, from $2,300 to $104,000 MRR.
+Cost attribution helped unlock broader developer access at Wargaming.
+Both are becoming reference points for practical AI adoption in CEE gaming.</div></td></tr>
+<tr><td bgcolor="#D8DDE2" colspan="2" height="1" style="height:1px;font-size:0;line-height:1px;"> </td></tr>
+<tr><td class="company-logo-col" valign="middle" width="82"><table border="0" cellpadding="0" cellspacing="0" class="company-logo-box" height="54" role="presentation" style="border:1px solid #E2E4E7;background:#FFFFFF;border-radius:8px;overflow:hidden;border-collapse:separate;border-spacing:0;" width="60"><tr><td align="center" style="padding:8px 6px;" valign="middle"><img alt="Axel Springer, BBC & WPP" src="https://raw.githubusercontent.com/mediaitalyopinno/aws-newsletter/main/company-logos/axel-springer-bbc-wpp.png" style="width:48px;height:auto;" width="48"/></td></tr></table></td><td style="padding:12px 0 2px 0;" valign="middle"><div style="font-family:'Amazon Ember',Arial,Helvetica,sans-serif;font-size:14.5px;line-height:18px;font-weight:700;color:#252F3E;margin-bottom:5px;">Qualifying Design Partners for Publishing’s AI Defense</div><div style="font-family:'Amazon Ember',Arial,Helvetica,sans-serif;font-size:11.5px;line-height:17px;color:#5F6B75;">AWS BD is engaging Axel Springer, BBC and WPP to identify a qualified publishing design partner.
+The focus is on licensing, content-control tooling and AI-related publishing use cases.
+Teads is also testing first-party data and Clean Rooms use cases.
+The motion targets initial licensing or control-tooling opportunities.</div></td></tr>
+</table></td>
+</tr></table></td></tr>
+</table>
+</td></tr>
+<tr><td height="14" style="height:14px;line-height:14px;font-size:0;"> </td></tr>
+<!-- USE CASE 4 -->
+<tr><td class="content-pad" style="padding:0 44px;">
+<table border="0" cellpadding="0" cellspacing="0" class="usecase-card-table" role="presentation" style="width:100%;border:1px solid #D3C3DF;border-radius:24px;background-color:#FFFFFF;overflow:hidden;border-collapse:separate;border-spacing:0;" width="100%">
+<tr><td colspan="2"><table border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%"><tr><td bgcolor="#45117A" height="5" style="height:5px;font-size:0;line-height:0;" width="25%"> </td><td bgcolor="#8F14C8" style="font-size:0;line-height:0;" width="25%"> </td><td bgcolor="#D71CBB" style="font-size:0;line-height:0;" width="25%"> </td><td bgcolor="#FF9900" style="font-size:0;line-height:0;" width="25%"> </td></tr></table></td></tr>
+<tr><td class="usecase-main" colspan="2" style="padding:13px 22px 18px 22px;"><table border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%"><tr>
+<td class="usecase-left" style="width:210px;padding-right:18px;border-right:1px solid #E5E7EB;" valign="middle" width="210"><table border="0" cellpadding="0" cellspacing="0" role="presentation"><tr><td valign="middle" width="42"><table border="0" cellpadding="0" cellspacing="0" class="small-icon-box" role="presentation" style="width:42px;height:42px;border:1px solid #D8CBE3;background-color:#FFFFFF;border-radius:8px;overflow:hidden;border-collapse:separate;border-spacing:0;" width="42"><tr><td align="center" height="42" style="width:42px;height:42px;" valign="middle"><img alt="" height="22" src="https://raw.githubusercontent.com/mediaitalyopinno/aws-newsletter/main/sector-icons/independent-software-vendors.png" width="22"/></td></tr></table></td><td width="12"> </td><td><div class="usecase-heading" style="font-family:'Amazon Ember',Arial,Helvetica,sans-serif;font-size:18px;line-height:21px;font-weight:700;color:#152A68;">Independent Software Vendors</div></td></tr></table></td>
+<td class="usecase-right" style="padding-left:24px;" valign="top"><table border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%">
+<tr><td class="company-logo-col" valign="middle" width="82"><table border="0" cellpadding="0" cellspacing="0" class="company-logo-box" height="54" role="presentation" style="border:1px solid #E2E4E7;background:#FFFFFF;border-radius:8px;overflow:hidden;border-collapse:separate;border-spacing:0;" width="60"><tr><td align="center" style="padding:8px 6px;" valign="middle"><img alt="dsm-firmenich" src="https://raw.githubusercontent.com/mediaitalyopinno/aws-newsletter/main/company-logos/dsm-firmenich.png" style="width:48px;height:auto;" width="48"/></td></tr></table></td><td style="padding:12px 0 13px 0;" valign="middle"><div style="font-family:'Amazon Ember',Arial,Helvetica,sans-serif;font-size:14.5px;line-height:18px;font-weight:700;color:#252F3E;margin-bottom:5px;">Innovation Day Locked — Co-Scientist Orchestration as Anchor</div><div style="font-family:'Amazon Ember',Arial,Helvetica,sans-serif;font-size:11.5px;line-height:17px;color:#5F6B75;">AWS completed five stakeholder interviews with dsm-firmenich’s Science & Research leadership.
+The Innovation Day will focus on AI-ready data and co-scientist orchestration.
+The FDE model is positioned as a potential production follow-on.
+The engagement includes a $54K ARR AgentCore Platform opportunity.</div></td></tr>
+<tr><td bgcolor="#D8DDE2" colspan="2" height="1" style="height:1px;font-size:0;line-height:1px;"> </td></tr>
+<tr><td class="company-logo-col" valign="middle" width="82"><table border="0" cellpadding="0" cellspacing="0" class="company-logo-box" height="54" role="presentation" style="border:1px solid #E2E4E7;background:#FFFFFF;border-radius:8px;overflow:hidden;border-collapse:separate;border-spacing:0;" width="60"><tr><td align="center" style="padding:8px 6px;" valign="middle"><img alt="Nemetschek" src="https://raw.githubusercontent.com/mediaitalyopinno/aws-newsletter/main/company-logos/nemetschek.png" style="width:48px;height:auto;" width="48"/></td></tr></table></td><td style="padding:12px 0 2px 0;" valign="middle"><div style="font-family:'Amazon Ember',Arial,Helvetica,sans-serif;font-size:14.5px;line-height:18px;font-weight:700;color:#252F3E;margin-bottom:5px;">Expanding AWS AI Services Across the Global Product Suite</div><div style="font-family:'Amazon Ember',Arial,Helvetica,sans-serif;font-size:11.5px;line-height:17px;color:#5F6B75;">GTM Surge BD supported the Nemetschek relationship through AEC expertise and executive engagement.
+The strategic focus includes AWS Marketplace, co-innovation and AI-led product development.
+Agentic AI use cases and new product R&D are being explored across the group.
+2026 priorities include Marketplace activation and the first agentic use case architected for production.</div></td></tr>
+</table></td>
+</tr></table></td></tr>
+</table>
+</td></tr>
+<tr><td height="46" style="height:46px;line-height:46px;font-size:0;"> </td></tr>
+<!-- FOOTER -->
+<tr>
+<td bgcolor="#283440" class="footer-pad" style="padding:28px 44px 30px 44px;background-color:#283440;">
+<table border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%">
+<tr>
+<td class="footer-left" style="width:50%;" valign="top"><img alt="AWS" src="https://raw.githubusercontent.com/mediaitalyopinno/aws-newsletter/main/corporate/aws-logo.png" style="width:116px;height:auto;" width="116"/></td>
+<td align="right" class="footer-right" style="width:50%;font-family:'Amazon Ember',Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;color:#BFC5CA;text-align:right;" valign="top">AI Industry Pulse<br/>© 2026 Amazon Web Services, Inc. or its affiliates.<br/>Amazon Confidential and Trademark.</td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%"><tr><td align="right" style="padding-top:16px;line-height:0;font-size:0;"><img alt="" class="footer-smile-img" src="https://raw.githubusercontent.com/mediaitalyopinno/aws-newsletter/main/corporate/amazon-smile-footer.png" style="display:block;width:180px;max-width:180px;height:auto;border:0;outline:none;text-decoration:none;margin-left:auto;opacity:.18;" width="180"/></td></tr></table></td>
+</tr>
+</table>
+<!--[if mso]></td></tr></table><![endif]-->
+</td>
+</tr>
+</table>
+</center>
+</body>
+</html>
